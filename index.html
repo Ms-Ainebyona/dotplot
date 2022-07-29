@@ -42,11 +42,7 @@
 				display: inline;
 			}
 
-			svg {
-				background-color: #d3d3d3;
-				display: block;
-				margin: 0 auto;
-			}
+			
 
 			circle {
 				stroke-width: 1;
@@ -95,22 +91,22 @@
 	<body>
 
 		<div id="main">
-			<h1>Summary of the presidential elections
+			<h1>A dot graph showing comparison of Invalid votes versus Valid votes per district
 			
-			<p>This dotplot shows the Invalid Votes and Valid Votes
+	
 			
 		</div>
 		<script type="text/javascript">
 
 		// this is the size of the svg container -- the white part
 			var fullwidth = 1000,
-				fullheight = 500;
+				fullheight = 5000;
 
 			// these are the margins around the graph. Axes labels go in margins.
 			var margin = {top: 20, right: 25, bottom: 20, left: 200};
 
 			var width = 1000 - margin.left - margin.right,
-    		height = 500 - margin.top - margin.bottom;
+    		height = 2000 - margin.top - margin.bottom;
 
 			var widthScale = d3.scale.linear()
 								.range([ 0, width]);
@@ -226,7 +222,7 @@
 					})
 					.append("title")
 					.text(function(d) {
-						return d.District + " in Ivotes: " + d.Ivotes + "%";
+						return d.District + " : Invalid votes =" + d.Ivotes + "%";
 					});
 
 				// Make the dots for 2013
@@ -252,7 +248,7 @@
 					})
 					.append("title")
 					.text(function(d) {
-						return d.District + " in Vvotes  : " + d.Vvotes + "%";
+						return d.District + ":Valid votes= " + d.Vvotes + "%";
 					});
 
 					// add the axes
